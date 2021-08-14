@@ -10,6 +10,10 @@ app.get('/', (request, response) => {
     return response.render('index', { recipes })
 })
 
+app.get('/create', (request, response) => {
+    return response.render('create')
+})
+
 app.get('/:id', (request, response) => {
     const { id } = request.params
     const recipe = recipes.find(recipe => recipe.id === id)

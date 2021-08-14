@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas | Nova receita</title>
+</head>
+<body>
+    <h1>Receitas</h1>
+    <h2>Nova receita</h2>
+
+    <form method="POST">
+        <p>
+            <label for="mealType">Tipo de receição</label><br />
+            <select id="mealType" name="mealType" required>
+                <option value="">Selecione uma opção</option>
+                <option>café da manhã</option>
+                <option>almoço</option>
+                <option>lanche</option>
+                <option>jantar</option>
+            </select>
+        </p>
+        <p>
+            <label for="mealType">Tipo de receição</label><br />
+            <select id="mealType" name="mealType" required>
+                <option value="">Selecione uma opção</option>
+                <option>café da manhã</option>
+                <option>almoço</option>
+                <option>lanche</option>
+                <option>jantar</option>
+            </select>
+        </p>
+        <p>
+            <label for="numberOfPeopleItServes">Quantidade de pessoas que o serve</label><br />
+            <input type="number" id="numberOfPeopleItServes" name="numberOfPeopleItServes" min="1" step="1" required />
+        </p>
+        <p>
+            <label for="difficultyLevel">Nível de dificuldade</label><br />
+            <select id="difficultyLevel" name="difficultyLevel" required>
+                <option value="">Selecione uma opção</option>
+                <option>iniciante</option>
+                <option>intermediário</option>
+                <option>avançado</option>
+            </select>
+        </p>
+        <p>
+            <label for="listOfIngredients">Lista de ingredientes</label><br />
+            <textarea id="listOfIngredients" name="listOfIngredients" required></textarea>
+        </p>
+        <p>
+            <label for="preparationSteps">Passo a passo para prepará-lo</label><br />
+            <textarea id="preparationSteps" name="preparationSteps" required></textarea>
+        </p>
+        <button type="submit">Submeter</button>
+    </form>
+</body>
+</html>

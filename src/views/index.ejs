@@ -8,6 +8,11 @@
 <body>
     <h1>Receitas</h1>
     <ul>
+        <li>
+            <a href="/create">Nova receita</a>
+        </li>
+    </ul>
+    <ul>
         <% for(const recipe of recipes) { %>
             <li>
                 <a href="<%= recipe.id %>">
