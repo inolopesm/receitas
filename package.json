@@ -5,7 +5,7 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
-        "start": "node --experimental-json-modules src/index.mjs"
+        "start": "nodemon src/index.mjs"
     },
     "dependencies": {
         "ejs": "^3.1.6",
@@ -13,6 +13,7 @@
     },
     "devDependencies": {
         "@types/express": "^4.17.13",
-        "@types/node": "^14.17.9"
+        "@types/node": "^14.17.9",
+        "nodemon": "^2.0.12"
     }
 }
