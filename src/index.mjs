@@ -10,4 +10,11 @@ app.get('/', (request, response) => {
     return response.render('index', { recipes })
 })
 
+app.get('/:id', (request, response) => {
+    const { id } = request.params
+    const recipe = recipes.find(recipe => recipe.id === id)
+    if (recipe === undefined) return response.status(404).end()
+    return response.render('detail', { recipe })
+})
+
 app.listen(3000)
