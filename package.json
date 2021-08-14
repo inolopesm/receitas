@@ -5,7 +5,7 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
-        "start": "node src/index.mjs"
+        "start": "node --experimental-json-modules src/index.mjs"
     },
     "dependencies": {
         "ejs": "^3.1.6",

@@ -7,7 +7,10 @@
 </head>
 <body>
     <h1>Receitas</h1>
-    <ul></ul>
-    <script src="script.js"></script>
+    <ul>
+        <% for(const recipe of recipes) { %>
+            <li><%= recipe.title %></li>
+        <% } %>
+    </ul>
 </body>
 </html>
