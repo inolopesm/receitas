@@ -9,7 +9,11 @@
     <h1>Receitas</h1>
     <ul>
         <% for(const recipe of recipes) { %>
-            <li><%= recipe.title %></li>
+            <li>
+                <a href="<%= recipe.id %>">
+                    <%= recipe.title %>
+                </a>
+            </li>
         <% } %>
     </ul>
 </body>
