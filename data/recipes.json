@@ -42,5 +42,16 @@
         "preparationSteps": "1. Bata no liquidificador o milho, o requeijão, o creme de leite e a água.\r\n2. Refogue o creme do liquidificador com o frango desfiado, as azeitonas e o sal até ficar com uma textura espessa.\r\n3. Coloque o refogado numa assadeira, cubra com mussarela e espalhe a batata palha por cima.\r\n4. Leve ao forno até borbulhar.\r\n5. Sirva com arroz branco.",
         "photoUrl": "https://img.itdg.com.br/tdg/images/recipes/000/010/254/10025/10025_original.jpg?mode=crop&width=710&height=400",
         "createdAt": "2021-08-15T15:32:05.346Z"
+    },
+    {
+        "id": "84898db5-a15a-4e58-9d84-d665e42cb691",
+        "title": "Chocolate quente cremoso",
+        "mealType": "café da manhã",
+        "numberOfPeopleItServes": 1,
+        "difficultyLevel": "iniciante",
+        "listOfIngredients": "250 gramas de chocolate ao leite\r\n1 caixinha de 200 gramas de creme de leite\r\n3 vezes a medida da caixinha de creme de leite de leite integral",
+        "preparationSteps": "1. Pique os 250 gramas de chocolate ao leite.\r\n2. Derreta o chocolate em banho-maria.\r\n3. Quando estiver derretido, adicione o creme de leite e misture ainda em banho-maria.\r\n4. Após a consistência ficar homogênea, acrescente o leite integral.\r\n5. Mexa bem com uma colher e tire a mistura do banho-maria.\r\n6. Coloque no fogo até o chocolate quente ferver.\r\n7. Assim que ferver, desligue o fogo e sirva o chocolate quente.",
+        "photoUrl": "https://i.ibb.co/rfTVLRT/chocolate-quente-cremoso.jpg",
+        "createdAt": "2021-08-15T15:46:36.226Z"
     }
 ]
