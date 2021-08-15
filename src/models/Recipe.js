@@ -79,7 +79,7 @@ import { v4 as uuid } from 'uuid'
         }
 
         const fileData = JSON.stringify(recipes, null, 4)
-        await fs.writeFile('./src/data/recipes.json', fileData)
+        await fs.writeFile('./data/recipes.json', fileData)
     }
 
     /**
@@ -87,7 +87,7 @@ import { v4 as uuid } from 'uuid'
      * @returns {Promise<Recipe[]>}
      */
     static async getAll() {
-        const fileContent = await fs.readFile('./src/data/recipes.json')
+        const fileContent = await fs.readFile('./data/recipes.json')
         const fileData = fileContent.toString()
 
         /** @type {IRecipe[]} */
