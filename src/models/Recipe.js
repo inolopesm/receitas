@@ -12,6 +12,7 @@ import { v4 as uuid } from 'uuid'
  * @property {string} difficultyLevel
  * @property {string} listOfIngredients
  * @property {string} preparationSteps
+ * @property {string} photoUrl
  * @property {string} createdAt
  */
 
@@ -24,6 +25,7 @@ import { v4 as uuid } from 'uuid'
  * @property {string} difficultyLevel
  * @property {string} listOfIngredients
  * @property {string} preparationSteps
+ * @property {string|undefined} photoUrl
  * @property {string|undefined} createdAt
  */
 
@@ -32,7 +34,7 @@ import { v4 as uuid } from 'uuid'
      * Método responsável por criar uma receita
      * @param {IRecipeConstructor} params
      */
-    constructor({ id = uuid(), title, mealType, numberOfPeopleItServes, difficultyLevel, listOfIngredients, preparationSteps, createdAt = new Date().toISOString() }) {
+    constructor({ id = uuid(), title, mealType, numberOfPeopleItServes, difficultyLevel, listOfIngredients, preparationSteps, photoUrl = '/static/images/capa-receita-padrao.png', createdAt = new Date().toISOString() }) {
         this.id = id
         this.title = title
         this.mealType = mealType
@@ -40,6 +42,7 @@ import { v4 as uuid } from 'uuid'
         this.difficultyLevel = difficultyLevel
         this.listOfIngredients = listOfIngredients
         this.preparationSteps = preparationSteps
+        this.photoUrl = photoUrl
         this.createdAt = createdAt
     }
 
@@ -56,6 +59,7 @@ import { v4 as uuid } from 'uuid'
             difficultyLevel: this.difficultyLevel,
             listOfIngredients: this.listOfIngredients,
             preparationSteps: this.preparationSteps,
+            photoUrl: this.photoUrl,
             createdAt: this.createdAt
         }
     }
@@ -68,7 +72,7 @@ import { v4 as uuid } from 'uuid'
         const recipes = await Recipe.getAll()
         const index = recipes.findIndex(recipe => recipe.id === this.id)
 
-        if (index !== -1) {
+        if (index === -1) {
             recipes.push(this)
         } else {
             recipes[index] = this

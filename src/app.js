@@ -8,6 +8,7 @@ const app = express()
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
 
+app.use('/static', express.static('./static'))
 app.use(express.urlencoded({ extended: false }))
 app.use(router)
 

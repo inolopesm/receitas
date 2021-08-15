@@ -11,11 +11,11 @@
 
     <form method="POST">
         <p>
-            <label for="title">Título</label><br />
+            <label for="title">Título*</label><br />
             <input type="text" id="title" name="title" required autofocus />
         </p>
         <p>
-            <label for="mealType">Tipo de receição</label><br />
+            <label for="mealType">Tipo de receição*</label><br />
             <select id="mealType" name="mealType" required>
                 <option value="">Selecione uma opção</option>
                 <option>café da manhã</option>
@@ -25,11 +25,11 @@
             </select>
         </p>
         <p>
-            <label for="numberOfPeopleItServes">Quantidade de pessoas que o serve</label><br />
+            <label for="numberOfPeopleItServes">Quantidade de pessoas que o serve*</label><br />
             <input type="number" id="numberOfPeopleItServes" name="numberOfPeopleItServes" min="1" step="1" required />
         </p>
         <p>
-            <label for="difficultyLevel">Nível de dificuldade</label><br />
+            <label for="difficultyLevel">Nível de dificuldade*</label><br />
             <select id="difficultyLevel" name="difficultyLevel" required>
                 <option value="">Selecione uma opção</option>
                 <option>iniciante</option>
@@ -38,12 +38,16 @@
             </select>
         </p>
         <p>
-            <label for="listOfIngredients">Lista de ingredientes</label><br />
+            <label for="listOfIngredients">Lista de ingredientes*</label><br />
             <textarea id="listOfIngredients" name="listOfIngredients" required></textarea>
         </p>
         <p>
-            <label for="preparationSteps">Passo a passo para prepará-lo</label><br />
+            <label for="preparationSteps">Passo a passo para prepará-lo*</label><br />
             <textarea id="preparationSteps" name="preparationSteps" required></textarea>
+        </p>
+        <p>
+            <label for="photoUrl">URL de uma foto da receita pronta</label>
+            <input type="url" id="photoUrl" name="photoUrl" />
         </p>
         <button type="submit">Submeter</button>
     </form>

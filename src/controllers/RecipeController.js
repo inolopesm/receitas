@@ -40,12 +40,13 @@ export default class RecipeController {
      */
     store = async (request, response) => {
         const recipe = new Recipe({
-            title                   : request.body.title,
-            mealType                : request.body.mealType,
-            numberOfPeopleItServes  : Number.parseInt(request.body.numberOfPeopleItServes),
-            difficultyLevel         : request.body.difficultyLevel,
-            listOfIngredients       : request.body.listOfIngredients,
-            preparationSteps        : request.body.preparationSteps
+            title: request.body.title,
+            mealType: request.body.mealType,
+            numberOfPeopleItServes: Number.parseInt(request.body.numberOfPeopleItServes),
+            difficultyLevel: request.body.difficultyLevel,
+            listOfIngredients: request.body.listOfIngredients,
+            preparationSteps: request.body.preparationSteps,
+            photoUrl: request.body.photoUrl !== '' ? request.body.photoUrl : undefined
         })
 
         await recipe.save()
