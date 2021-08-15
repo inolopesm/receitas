@@ -1,3 +1,5 @@
+'use strict';
+
 import Recipe from '../models/Recipe.js'
 
 /**
