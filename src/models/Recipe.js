@@ -33,14 +33,14 @@ import { v4 as uuid } from 'uuid'
      * @param {IRecipeConstructor} params
      */
     constructor({ id = uuid(), title, mealType, numberOfPeopleItServes, difficultyLevel, listOfIngredients, preparationSteps, createdAt = new Date().toISOString() }) {
-        this.id                     = id
-        this.title                  = title
-        this.mealType               = mealType
+        this.id = id
+        this.title = title
+        this.mealType = mealType
         this.numberOfPeopleItServes = numberOfPeopleItServes
-        this.difficultyLevel        = difficultyLevel
-        this.listOfIngredients      = listOfIngredients
-        this.preparationSteps       = preparationSteps
-        this.createdAt              = createdAt
+        this.difficultyLevel = difficultyLevel
+        this.listOfIngredients = listOfIngredients
+        this.preparationSteps = preparationSteps
+        this.createdAt = createdAt
     }
 
     /**
@@ -49,14 +49,14 @@ import { v4 as uuid } from 'uuid'
      */
     toJSON() {
         return {
-            id                      : this.id,
-            title                   : this.title,
-            mealType                : this.mealType,
-            numberOfPeopleItServes  : this.numberOfPeopleItServes,
-            difficultyLevel         : this.difficultyLevel,
-            listOfIngredients       : this.listOfIngredients,
-            preparationSteps        : this.preparationSteps,
-            createdAt               : this.createdAt
+            id: this.id,
+            title: this.title,
+            mealType: this.mealType,
+            numberOfPeopleItServes: this.numberOfPeopleItServes,
+            difficultyLevel: this.difficultyLevel,
+            listOfIngredients: this.listOfIngredients,
+            preparationSteps: this.preparationSteps,
+            createdAt: this.createdAt
         }
     }
 

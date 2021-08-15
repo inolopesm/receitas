@@ -4,8 +4,9 @@
     "repository": "github:inolopesm/receitas",
     "version": "0.2.0",
     "license": "MIT",
+    "type": "module",
     "scripts": {
-        "start": "nodemon src/index.mjs"
+        "start": "nodemon src/index.js"
     },
     "dependencies": {
         "ejs": "^3.1.6",

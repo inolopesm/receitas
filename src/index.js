@@ -1,5 +1,5 @@
 'use strict';
 
-import app from './app.mjs'
+import app from './app.js'
 
 app.listen(3000)

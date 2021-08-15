@@ -1,4 +1,4 @@
-import Recipe from '../models/Recipe.mjs'
+import Recipe from '../models/Recipe.js'
 
 /**
  * @typedef {import('express').RequestHandler} RequestHandler
