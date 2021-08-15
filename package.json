@@ -2,7 +2,7 @@
     "name": "receitas",
     "description": "webapp de receitas",
     "repository": "github:inolopesm/receitas",
-    "version": "0.0.0",
+    "version": "0.2.0",
     "license": "MIT",
     "scripts": {
         "start": "nodemon src/index.mjs"
