@@ -47,24 +47,6 @@ import { v4 as uuid } from 'uuid'
     }
 
     /**
-     * Método responsável por retornar um objeto simples da classe
-     * @return {IRecipe}
-     */
-    toJSON() {
-        return {
-            id: this.id,
-            title: this.title,
-            mealType: this.mealType,
-            numberOfPeopleItServes: this.numberOfPeopleItServes,
-            difficultyLevel: this.difficultyLevel,
-            listOfIngredients: this.listOfIngredients,
-            preparationSteps: this.preparationSteps,
-            photoUrl: this.photoUrl,
-            createdAt: this.createdAt
-        }
-    }
-
-    /**
      * Método responsável por salvar a receita na persistência
      * @returns {Promise<void>}
      */
