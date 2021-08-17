@@ -8,6 +8,10 @@
 <body>
     <h1>Receitas</h1>
     <h2>Nova receita</h2>
+    
+    <% if (error !== null) { %>
+     <p><%= error %></p>
+    <% } %>
 
     <form method="POST">
         <p>

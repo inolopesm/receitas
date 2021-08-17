@@ -32,8 +32,9 @@ export default class RecipeController {
      * Método responsável por renderizar um formulário para criar uma receita
      * @type {RequestHandler}
      */
-    create = (request, response) => {    
-        return response.render('create')
+    create = (request, response) => {
+        const { error = null } = request.query
+        return response.render('create', { error })
     }
 
     /**
@@ -50,6 +51,12 @@ export default class RecipeController {
             preparationSteps: request.body.preparationSteps,
             photoUrl: request.body.photoUrl !== '' ? request.body.photoUrl : undefined
         })
+
+        const error = recipe.isValid()
+
+        if (error !== null) {
+            return response.redirect(`/create?error=${error.message}`)
+        }
 
         await recipe.save()
 
