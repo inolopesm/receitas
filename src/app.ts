@@ -1,7 +1,5 @@
-'use strict';
-
 import express from 'express'
-import router from './router.js'
+import router from './router'
 
 const app = express()
 
