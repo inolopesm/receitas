@@ -5,7 +5,9 @@
   "version": "0.2.0",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/index.ts"
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "nodemon src/index.ts"
   },
   "dependencies": {
     "ejs": "^3.1.6",
