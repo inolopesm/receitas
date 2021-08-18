@@ -4,12 +4,19 @@
         {
             "type": "node",
             "request": "attach",
-            "name": "Launch Program",
+            "name": "Attach Program",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "protocol": "inspector",
             "restart": true
+        },
+        {
+          "type": "node",
+          "request": "launch",
+          "name": "Launch Program",
+          "runtimeArgs": ["-r", "ts-node/register"],
+          "args": ["${workspaceFolder}/src/index.ts"]
         }
     ]
 }
