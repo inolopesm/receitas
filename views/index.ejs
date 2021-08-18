@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receitas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receitas</title>
 </head>
+
 <body>
-    <h1>Receitas</h1>
-    <ul>
-        <li>
-            <a href="/create">Nova receita</a>
-        </li>
-    </ul>
-    <ul>
-        <% for(const recipe of recipes) { %>
-            <li>
-                <a href="<%= recipe.id %>">
-                    <%= recipe.title %>
-                </a>
-            </li>
-        <% } %>
-    </ul>
+  <h1>Receitas</h1>
+  <ul>
+    <li>
+      <a href="/create">Nova receita</a>
+    </li>
+  </ul>
+  <ul>
+    <% for(const recipe of recipes) { %>
+      <li>
+        <a href="<%= recipe.id %>">
+          <%= recipe.title %>
+        </a>
+      </li>
+      <% } %>
+  </ul>
 </body>
+
 </html>
