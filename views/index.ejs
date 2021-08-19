@@ -23,15 +23,19 @@
     <button type="submit">Pesquisar</button>
   </form>
   <h2>Listagem</h2>
-  <ul>
-    <% for(const recipe of recipes) { %>
-      <li>
-        <a href="<%= recipe.id %>">
-          <%= recipe.title %>
-        </a>
-      </li>
-      <% } %>
-  </ul>
+  <% if (recipes.length > 0) { %>
+    <ul>
+      <% for(const recipe of recipes) { %>
+        <li>
+          <a href="<%= recipe.id %>">
+            <%= recipe.title %>
+          </a>
+        </li>
+        <% } %>
+    </ul>
+  <% } else { %>
+    <p>Não foi encontrada nenhuma receita para ser exibida</p>
+  <% } %>
 </body>
 
 </html>
