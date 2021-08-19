@@ -44,7 +44,7 @@ export default class Recipe implements IRecipe {
     this.createdAt = params.createdAt ?? new Date().toISOString()
   }
 
-  isValid(): Error | null {
+  validate(): Error | null {
     if (!uuid.validate(this.id)) {
       return new Error('id possui um uuid inválido')
     }

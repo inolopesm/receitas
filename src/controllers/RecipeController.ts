@@ -2,9 +2,16 @@ import { RequestHandler } from 'express'
 import Recipe from '../models/Recipe'
 
 export default class RecipeController {
-  index: RequestHandler = async (_, response) => {
+  index: RequestHandler = async (request, response) => {
     const recipes = await Recipe.getAll()
-    return response.render('index', { recipes })
+
+    if (request.query.search === undefined) {
+      return response.render('index', { recipes, title: '' })
+    }
+
+    const partialTitle = String(request.query.search)
+    const matchedRecipes = recipes.filter(recipe => recipe.title.toLowerCase().includes(partialTitle))
+    return response.render('index', { recipes: matchedRecipes, title: partialTitle })
   }
 
   show: RequestHandler = async (request, response) => {
@@ -31,7 +38,7 @@ export default class RecipeController {
       photoUrl: request.body.photoUrl !== '' ? request.body.photoUrl : undefined
     })
 
-    const error = recipe.isValid()
+    const error = recipe.validate()
 
     if (error !== null) {
       return response.redirect(`/create?error=${error.message}`)
