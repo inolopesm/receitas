@@ -1,6 +1,7 @@
 import { RequestHandler } from 'express'
 import Recipe from '../models/Recipe'
 import RecipeRepository from '../repositories/RecipeRepository'
+import StoreRecipeValidator from '../validators/StoreRecipeValidator'
 
 export default class RecipeController {
   index: RequestHandler = async (request, response) => {
@@ -39,7 +40,7 @@ export default class RecipeController {
       photoUrl: request.body.photoUrl !== '' ? request.body.photoUrl : undefined
     })
 
-    const error = recipe.validate()
+    const error = StoreRecipeValidator.validate(recipe)
 
     if (error !== null) {
       return response.redirect(`/create?error=${error.message}`)
