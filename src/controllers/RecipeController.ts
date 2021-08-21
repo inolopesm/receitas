@@ -1,9 +1,10 @@
 import { RequestHandler } from 'express'
 import Recipe from '../models/Recipe'
+import RecipeRepository from '../repositories/RecipeRepository'
 
 export default class RecipeController {
   index: RequestHandler = async (request, response) => {
-    const recipes = await Recipe.getAll()
+    const recipes = await RecipeRepository.getAll()
 
     if (request.query.search === undefined) {
       return response.render('index', { recipes, title: '' })
@@ -16,7 +17,7 @@ export default class RecipeController {
 
   show: RequestHandler = async (request, response) => {
     const { id } = request.params
-    const recipes = await Recipe.getAll()
+    const recipes = await RecipeRepository.getAll()
     const recipe = recipes.find(recipe => recipe.id === id)
     if (recipe === undefined) return response.status(404).end()
     return response.render('detail', { recipe })
@@ -44,7 +45,7 @@ export default class RecipeController {
       return response.redirect(`/create?error=${error.message}`)
     }
 
-    await recipe.save()
+    await RecipeRepository.save(recipe)
 
     return response.redirect('/')
   }
