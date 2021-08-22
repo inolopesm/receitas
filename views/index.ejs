@@ -2,40 +2,119 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Receitas</title>
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+   <!-- Materialize CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+   <style>
+     /**
+      * Materialize footer not going to bottom of page
+      * https://stackoverflow.com/a/55685952
+      */
+     body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+   </style>
 </head>
 
-<body>
-  <h1>Receitas</h1>
-  <ul>
-    <li>
-      <a href="/create">Nova receita</a>
-    </li>
-  </ul>
-  <h2>Pesquisa</h2>
-  <form method="GET">
-    <p>
-      <label for="search">Título*</label><br />
-      <input type="text" id="search" name="search" value="<%= title %>" />
-    </p>
-    <button type="submit">Pesquisar</button>
-  </form>
-  <h2>Listagem</h2>
-  <% if (recipes.length > 0) { %>
-    <ul>
-      <% for(const recipe of recipes) { %>
-        <li>
-          <a href="<%= recipe.id %>">
-            <%= recipe.title %>
+<body class="grey lighten-4">
+  <header>
+    <nav class="orange">
+      <div class="nav-wrapper container">
+        <a href="/" class="brand-logo">Receitas</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <a href="/create">Nova Receita</a>
+          </li>
+          <li class="<%= title ? 'active' : ''  %>" id="li-search">
+            <a href="#" id="btn-search">
+              Pesquisar
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav class="orange <%= !title ? 'hide' : ''  %>" id="nav-search">
+      <div class="nav-wrapper">
+        <form>
+          <div class="input-field">
+            <input class="white-text" id="search" type="search" name="search" value="<%= title %>" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="section">
+      <% if (recipes.length > 0) { %>
+        <div class="row">
+          <% for (const recipe of recipes) { %>
+            <div class="col s12 m6">
+              <article class="card">
+                <div class="card-image">
+                  <img src="<%= recipe.photoUrl %>" alt="foto da receita pronta" />
+                </div>
+                <div class="card-content">
+                  <a class="card-title" href="/<%= recipe.id %>"><%= recipe.title %></a>
+                </div>
+              </article>
+            </div>
+          <% } %>
+        </div>
+      <% } else { %>
+        <article class="card">
+          <div class="card-content">
+            <p class="center-align">Não foi encontrada nenhuma receita para ser exibida</p>
+          </div>
+        </article>
+      <% } %>
+    </section>
+  </main>
+
+  <footer class="orange">
+    <div class="container">
+      <section class="section white-text center-align">
+        Feito por
+        <strong>
+          <a class="white-text" href="https://github.com/inolopesm" rel="noreferrer noopener">
+            Matheus Inocêncio Lopes
           </a>
-        </li>
-        <% } %>
-    </ul>
-  <% } else { %>
-    <p>Não foi encontrada nenhuma receita para ser exibida</p>
-  <% } %>
+        </strong>
+      </section>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('#btn-search').addEventListener('click', mouseEvent => {
+      document.querySelector('#nav-search').classList.toggle('hide')
+      document.querySelector('#li-search').classList.toggle('active')
+    })
+
+    document.querySelector('#search').addEventListener('focus', focusEvent => {
+      focusEvent.target.classList.remove('white-text')
+    })
+
+    document.querySelector('#search').addEventListener('blur', blurEvent => {
+      blurEvent.target.classList.add('white-text')
+    })
+  </script>
 </body>
 
 </html>
