@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<html>
+<%- include('partials/header') -%>
+  <%#-- Main --%>
+    <div class="card shadow-sm">
+      <img class="card-img-top" src="<%= recipe.photoUrl %>" alt="foto da receita" />
+      <div class="card-body">
+        <h5 class="card-title"><%= recipe.title %></h2>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Receitas | Detalhe</title>
-</head>
+        <ul>
+          <li>
+            <strong>Tipo de refeição:</strong>
+            <%= recipe.mealType %>
+          </li>
+          <li>
+            <strong>Quantidade de pessoas que o serve:</strong>
+            <%= recipe.numberOfPeopleItServes %>
+          </li>
+          <li>
+            <strong>Nível de dificuldade:</strong>
+            <%= recipe.difficultyLevel %>
+          </li>
+        </ul>
 
-<body>
-  <h1>Receitas</h1>
-  <h2>
-    <%= recipe.title %>
-  </h2>
+        <h6 class="card-subtitle mb-2">Lista de ingredientes</h6>
+        <p class="card-text" style="white-space: pre-wrap;"><%= recipe.listOfIngredients %></p>
 
-  <img src="<%= recipe.photoUrl %>" alt="foto da receita" width="640" height="360" />
+        <h6 class="card-subtitle mb-2">Passo a passo para prepará-lo</h6>
+        <p class="card-text" style="white-space: pre-wrap;"><%= recipe.preparationSteps %></p>
 
-  <ul>
-    <li>
-      <strong>Tipo de refeição:</strong>
-      <%= recipe.mealType %>
-    </li>
-    <li>
-      <strong>Quantidade de pessoas que o serve:</strong>
-      <%= recipe.numberOfPeopleItServes %>
-    </li>
-    <li>
-      <strong>Nível de dificuldade:</strong>
-      <%= recipe.difficultyLevel %>
-    </li>
-  </ul>
-
-  <h3>Lista de ingredientes</h3>
-  <div style="white-space: pre-wrap;"><%= recipe.listOfIngredients %></div>
-
-  <h3>Passo a passo para prepará-lo</h3>
-  <div style="white-space: pre-wrap;"><%= recipe.preparationSteps %></div>
-</body>
-
-</html>
+      </div>
+    </div>
+  <%#/-- Main --%>
+<%- include('partials/footer') -%>
