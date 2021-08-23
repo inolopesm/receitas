@@ -1,157 +1,57 @@
-<!DOCTYPE html>
-<html>
+<%- include('partials/header') -%>
+  <%#-- Main --%>
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <form method="POST">
+          <div class="mb-3">
+            <label for="title">Título*</label>
+            <input class="form-control" type="text" id="title" name="title" required autofocus />
+          </div>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Receitas | Nova receita</title>
+          <div class="mb-3">
+            <label for="mealType">Tipo de refeição*</label><br />
+            <select class="form-select" id="mealType" name="mealType" required>
+              <option value="">Selecione uma opção</option>
+              <option>café da manhã</option>
+              <option>almoço</option>
+              <option>lanche</option>
+              <option>jantar</option>
+            </select>
+          </div>
 
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <div class="mb-3">
+            <label for="numberOfPeopleItServes">Quantidade de pessoas que o serve*</label><br />
+            <input class="form-control" type="number" id="numberOfPeopleItServes" name="numberOfPeopleItServes" min="1" step="1" required />
+          </div>
 
-  <!-- Materialize CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+          <div class="mb-3">
+            <label for="difficultyLevel">Nível de dificuldade*</label><br />
+            <select class="form-select" id="difficultyLevel" name="difficultyLevel" required>
+              <option value="">Selecione uma opção</option>
+              <option>iniciante</option>
+              <option>intermediário</option>
+              <option>avançado</option>
+            </select>
+          </div>
 
-  <style>
-    /**
-     * Materialize footer not going to bottom of page
-     * https://stackoverflow.com/a/55685952
-     */
-    body {
-     display: flex;
-     min-height: 100vh;
-     flex-direction: column;
-   }
+          <div class="mb-3">
+            <label for="listOfIngredients">Lista de ingredientes*</label><br />
+            <textarea class="form-control" id="listOfIngredients" name="listOfIngredients" required></textarea>
+          </div>
 
-   main {
-     flex: 1 0 auto;
-   }
+          <div class="mb-3">
+            <label for="preparationSteps">Passo a passo para prepará-lo*</label><br />
+            <textarea class="form-control" id="preparationSteps" name="preparationSteps" required></textarea>
+          </div>
 
-   /** --------------------------------------------------------------------- */
+          <div class="mb-3">
+            <label for="photoUrl">URL de uma foto da receita pronta</label><br />
+            <input class="form-control" type="url" id="photoUrl" name="photoUrl" />
+          </div>
 
-   a.disabled {
-     pointer-events: none;
-     cursor: default;
-     color: rgba(255, 255, 255, 0.75);
-   }
-  </style>
-</head>
-
-<body class="grey lighten-4">
-  <nav class="orange">
-    <div class="nav-wrapper container">
-      <a href="/" class="brand-logo">Receitas</a>
-      <ul class="right hide-on-med-and-down">
-        <li class="active">
-          <a href="/create">Nova Receita</a>
-        </li>
-        <li>
-          <a class="disabled" href="#">
-            Pesquisar
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <main class="container">
-    <section class="section">
-      <div class="card">
-        <div class="card-content">
-          <form method="POST">
-            <div class="input-field">
-              <label for="title">Título*</label>
-              <input type="text" id="title" name="title" required autofocus />
-            </div>
-            <div class="input-field">
-              <label for="mealType">Tipo de refeição*</label><br />
-              <select id="mealType" name="mealType" required>
-                <option value="">Selecione uma opção</option>
-                <option>café da manhã</option>
-                <option>almoço</option>
-                <option>lanche</option>
-                <option>jantar</option>
-              </select>
-            </div>
-            <div class="input-field">
-              <label for="numberOfPeopleItServes">Quantidade de pessoas que o serve*</label><br />
-              <input type="number" id="numberOfPeopleItServes" name="numberOfPeopleItServes" min="1" step="1" required />
-            </div>
-            <div class="input-field">
-              <label for="difficultyLevel">Nível de dificuldade*</label><br />
-              <select id="difficultyLevel" name="difficultyLevel" required>
-                <option value="">Selecione uma opção</option>
-                <option>iniciante</option>
-                <option>intermediário</option>
-                <option>avançado</option>
-              </select>
-            </div>
-            <div class="input-field">
-              <label for="listOfIngredients">Lista de ingredientes*</label><br />
-              <textarea class="materialize-textarea" id="listOfIngredients" name="listOfIngredients" required></textarea>
-            </div>
-            <div class="input-field">
-              <label for="preparationSteps">Passo a passo para prepará-lo*</label><br />
-              <textarea class="materialize-textarea" id="preparationSteps" name="preparationSteps" required></textarea>
-            </div>
-            <div class="input-field">
-              <label for="photoUrl">URL de uma foto da receita pronta</label><br />
-              <input type="url" id="photoUrl" name="photoUrl" />
-            </div>
-            <button class="waves-effect waves-light btn" type="submit">Submeter</button>
-          </form>
-        </div>
+          <button class="btn btn-orange" type="submit">Submeter</button>
+        </form>
       </div>
-    </section>
-  </main>
-
-  <footer class="orange">
-    <div class="container">
-      <section class="section white-text center-align">
-        Feito por
-        <strong>
-          <a class="white-text" href="https://github.com/inolopesm" rel="noreferrer noopener">
-            Matheus Inocêncio Lopes
-          </a>
-        </strong>
-      </section>
     </div>
-  </footer>
-
-  <!-- Materialize JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-  <script>
-    window.onload = event => {
-      const selectElements = document.querySelectorAll('select')
-      M.FormSelect.init(selectElements)
-    }
-  </script>
-
-  <% if (error !== null) { %>
-    <script>
-      // Fastest method to escape HTML tags as HTML entities?
-      // https://stackoverflow.com/a/30930653
-
-      {
-        const TEN_SECONDS = 10 * 1000
-
-        function escapeHTML(html) {
-          return document
-            .createElement('div')
-            .appendChild(document.createTextNode(html))
-            .parentNode
-            .innerHTML
-        }
-
-        const html = escapeHTML('<%= error %>')
-        const displayLength = TEN_SECONDS
-        const classes = 'red'
-
-        M.toast({ html, displayLength, classes })
-      }
-    </script>
-  <% } %>
-</body>
-
-</html>
+  <%#/-- Main --%>
+<%- include('partials/footer') -%>

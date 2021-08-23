@@ -1,0 +1,114 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css');
+
+:root {
+  --orange-100: #FFE5D0;
+  --orange-200: #FECBA1;
+  --orange-300: #FEB272;
+  --orange-400: #FD9843;
+  --orange-500: #FD7E14;
+  --orange-600: #CA6510;
+  --orange-700: #984C0C;
+  --orange-800: #653208;
+  --orange-900: #331904;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.bg-orange {
+  background-color: var(--orange-500);
+}
+
+.nav-link-orange {
+  color: var(--orange-200);
+}
+
+.nav-link-orange:hover {
+  color: var(--orange-100);
+}
+
+.btn-orange {
+  color: var(--bs-gray-100);
+  background-color: var(--orange-500);
+  border-color: var(--orange-500);
+}
+.btn-orange:hover {
+  color: var(--bs-gray-100);
+  background-color: var(--orange-600);
+  border-color: var(--orange-600);
+}
+.btn-check:focus + .btn-orange, .btn-orange:focus {
+  color: var(--bs-gray-100);
+  background-color: var(--orange-600);
+  border-color: var(--orange-600);
+  box-shadow: 0 0 0 0.25rem var(--orange-600);
+}
+.btn-check:checked + .btn-orange, .btn-check:active + .btn-orange, .btn-orange:active, .btn-orange.active, .show > .btn-orange.dropdown-toggle {
+  color: var(--bs-gray-100);
+  background-color: var(--orange-600);
+  border-color: var(--orange-600);
+}
+.btn-check:checked + .btn-orange:focus, .btn-check:active + .btn-orange:focus, .btn-orange:active:focus, .btn-orange.active:focus, .show > .btn-orange.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem var(--orange-600);
+}
+.btn-orange:disabled, .btn-orange.disabled {
+  color: var(--bs-gray-100);
+  background-color: var(--orange-500);
+  border-color: var(--orange-500);
+}
+
+.btn-outline-orange-inverted {
+  color: var(--bs-gray-100);
+  border-color: var(--bs-gray-100);
+}
+
+.btn-outline-orange-inverted:hover {
+  color: var(--orange-500);
+  background-color: var(--bs-gray-100);
+  border-color: var(--bs-gray-100);
+}
+
+.btn-check:focus + .btn-outline-orange-inverted,
+.btn-outline-orange-inverted:focus
+{
+  box-shadow: 0 0 0 0.25rem var(--orange-600);
+}
+
+.btn-check:checked + .btn-outline-orange-inverted,
+.btn-check:active + .btn-outline-orange-inverted,
+.btn-outline-orange-inverted:active,
+.btn-outline-orange-inverted.active,
+.btn-outline-orange-inverted.dropdown-toggle.show
+{
+  color: var(--orange-500);
+  background-color: var(--bs-gray-100);
+  border-color: var(--bs-gray-100);
+}
+
+.btn-check:checked + .btn-outline-orange-inverted:focus,
+.btn-check:active + .btn-outline-orange-inverted:focus,
+.btn-outline-orange-inverted:active:focus,
+.btn-outline-orange-inverted.active:focus,
+.btn-outline-orange-inverted.dropdown-toggle.show:focus {
+  box-shadow: 0 0 0 0.25rem var(--orange-600);
+}
+
+.btn-outline-orange-inverted:disabled, .btn-outline-orange-inverted.disabled {
+  color: var(--orange-100);
+  background-color: transparent;
+}
+
+.link-orange {
+  color: var(--orange-500);
+}
+
+.link-orange:hover, .link-orange:focus {
+  color: var(--orange-600);
+}
