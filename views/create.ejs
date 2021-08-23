@@ -5,60 +5,153 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Receitas | Nova receita</title>
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+  <style>
+    /**
+     * Materialize footer not going to bottom of page
+     * https://stackoverflow.com/a/55685952
+     */
+    body {
+     display: flex;
+     min-height: 100vh;
+     flex-direction: column;
+   }
+
+   main {
+     flex: 1 0 auto;
+   }
+
+   /** --------------------------------------------------------------------- */
+
+   a.disabled {
+     pointer-events: none;
+     cursor: default;
+     color: rgba(255, 255, 255, 0.75);
+   }
+  </style>
 </head>
 
-<body>
-  <h1>Receitas</h1>
-  <h2>Nova receita</h2>
+<body class="grey lighten-4">
+  <nav class="orange">
+    <div class="nav-wrapper container">
+      <a href="/" class="brand-logo">Receitas</a>
+      <ul class="right hide-on-med-and-down">
+        <li class="active">
+          <a href="/create">Nova Receita</a>
+        </li>
+        <li>
+          <a class="disabled" href="#">
+            Pesquisar
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-  <% if (error !==null) { %>
-    <p>
-      <%= error %>
-    </p>
-    <% } %>
+  <main class="container">
+    <section class="section">
+      <div class="card">
+        <div class="card-content">
+          <form method="POST">
+            <div class="input-field">
+              <label for="title">Título*</label>
+              <input type="text" id="title" name="title" required autofocus />
+            </div>
+            <div class="input-field">
+              <label for="mealType">Tipo de refeição*</label><br />
+              <select id="mealType" name="mealType" required>
+                <option value="">Selecione uma opção</option>
+                <option>café da manhã</option>
+                <option>almoço</option>
+                <option>lanche</option>
+                <option>jantar</option>
+              </select>
+            </div>
+            <div class="input-field">
+              <label for="numberOfPeopleItServes">Quantidade de pessoas que o serve*</label><br />
+              <input type="number" id="numberOfPeopleItServes" name="numberOfPeopleItServes" min="1" step="1" required />
+            </div>
+            <div class="input-field">
+              <label for="difficultyLevel">Nível de dificuldade*</label><br />
+              <select id="difficultyLevel" name="difficultyLevel" required>
+                <option value="">Selecione uma opção</option>
+                <option>iniciante</option>
+                <option>intermediário</option>
+                <option>avançado</option>
+              </select>
+            </div>
+            <div class="input-field">
+              <label for="listOfIngredients">Lista de ingredientes*</label><br />
+              <textarea class="materialize-textarea" id="listOfIngredients" name="listOfIngredients" required></textarea>
+            </div>
+            <div class="input-field">
+              <label for="preparationSteps">Passo a passo para prepará-lo*</label><br />
+              <textarea class="materialize-textarea" id="preparationSteps" name="preparationSteps" required></textarea>
+            </div>
+            <div class="input-field">
+              <label for="photoUrl">URL de uma foto da receita pronta</label><br />
+              <input type="url" id="photoUrl" name="photoUrl" />
+            </div>
+            <button class="waves-effect waves-light btn" type="submit">Submeter</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
-      <form method="POST">
-        <p>
-          <label for="title">Título*</label><br />
-          <input type="text" id="title" name="title" required autofocus />
-        </p>
-        <p>
-          <label for="mealType">Tipo de receição*</label><br />
-          <select id="mealType" name="mealType" required>
-            <option value="">Selecione uma opção</option>
-            <option>café da manhã</option>
-            <option>almoço</option>
-            <option>lanche</option>
-            <option>jantar</option>
-          </select>
-        </p>
-        <p>
-          <label for="numberOfPeopleItServes">Quantidade de pessoas que o serve*</label><br />
-          <input type="number" id="numberOfPeopleItServes" name="numberOfPeopleItServes" min="1" step="1" required />
-        </p>
-        <p>
-          <label for="difficultyLevel">Nível de dificuldade*</label><br />
-          <select id="difficultyLevel" name="difficultyLevel" required>
-            <option value="">Selecione uma opção</option>
-            <option>iniciante</option>
-            <option>intermediário</option>
-            <option>avançado</option>
-          </select>
-        </p>
-        <p>
-          <label for="listOfIngredients">Lista de ingredientes*</label><br />
-          <textarea id="listOfIngredients" name="listOfIngredients" required></textarea>
-        </p>
-        <p>
-          <label for="preparationSteps">Passo a passo para prepará-lo*</label><br />
-          <textarea id="preparationSteps" name="preparationSteps" required></textarea>
-        </p>
-        <p>
-          <label for="photoUrl">URL de uma foto da receita pronta</label><br />
-          <input type="url" id="photoUrl" name="photoUrl" />
-        </p>
-        <button type="submit">Submeter</button>
-      </form>
+  <footer class="orange">
+    <div class="container">
+      <section class="section white-text center-align">
+        Feito por
+        <strong>
+          <a class="white-text" href="https://github.com/inolopesm" rel="noreferrer noopener">
+            Matheus Inocêncio Lopes
+          </a>
+        </strong>
+      </section>
+    </div>
+  </footer>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script>
+    window.onload = event => {
+      const selectElements = document.querySelectorAll('select')
+      M.FormSelect.init(selectElements)
+    }
+  </script>
+
+  <% if (error !== null) { %>
+    <script>
+      // Fastest method to escape HTML tags as HTML entities?
+      // https://stackoverflow.com/a/30930653
+
+      {
+        const TEN_SECONDS = 10 * 1000
+
+        function escapeHTML(html) {
+          return document
+            .createElement('div')
+            .appendChild(document.createTextNode(html))
+            .parentNode
+            .innerHTML
+        }
+
+        const html = escapeHTML('<%= error %>')
+        const displayLength = TEN_SECONDS
+        const classes = 'red'
+
+        M.toast({ html, displayLength, classes })
+      }
+    </script>
+  <% } %>
 </body>
 
 </html>
