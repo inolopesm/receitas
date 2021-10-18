@@ -1,6 +1,6 @@
 # Receitas
 
-> Este projeto gerencia receitas culinárias em uma página web. Tem como intenção servir de exemplo para esta [ideia de app](https://whimsical.com/receita-EkMAr5PbbTBx4BfbVrEtYL)
+> Este projeto gerencia receitas culinárias em uma página web. Tem como intenção servir de exemplo para esta [ideia de app](https://well-bathtub-153.notion.site/Receitas-9f111f8713364c3982ab85e505636b1b)
 
 ## 💻 Pré-requisitos
 
