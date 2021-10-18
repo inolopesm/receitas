@@ -21,9 +21,10 @@ Linux e macOS:
 
 ```
 nvm install 14;
+npm i -g yarn;
 git clone git@github.com:inolopesm/receitas.git;
 cd receitas;
-npm ci;
+yarn;
 ```
 
 Windows
@@ -32,9 +33,10 @@ Windows
 - [Git](https://git-scm.com/)
 
 ```
+npm i -g yarn;
 git clone git@github.com:inolopesm/receitas.git;
 cd receitas;
-npm ci;
+yarn;
 ```
 
 ## ☕ Usando Receitas
@@ -42,7 +44,8 @@ npm ci;
 Para usar Receitas, siga estas etapas:
 
 ```
-npm start;
+yarn build;
+yarn start;
 ```
 
 Acessar http://localhost:3000/
